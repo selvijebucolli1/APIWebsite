@@ -6,11 +6,11 @@
         <img :src="'https://image.tmdb.org/t/p/original'+articleImage" :alt="articleImage">
       </div>
       <div class="column">
+        <div class="single-article__content content">
         <p class="title is-5">{{articleTitle}}</p>
-      <div class="single-article__content content">
-        <div> {{articleContent }}</div>
+        <div class="text"> {{articleContent }}</div>
     <div class="content">
-      <p class="title is-6"><img class="rateLogo" src="../assets/1828884.png"> {{articleRate}}</p>
+      <p class="rate title is-6"><img class="rateLogo" src="../assets/1828884.png"> {{articleRate}}</p>
       <time class="title is-6" datetime="2016-1-1">{{articleDate}}</time>
     </div>
       </div>
@@ -81,4 +81,26 @@ img {
     width: 60%;
     height: 20%;
   }
+  @media(max-width: 767px){
+    img {
+    width: 105%;}
+   .single-article__content {
+    padding-top: 30px;
+    padding-bottom: 22px;
+   }
+   .text{
+    font-size: 14px;
+    padding-bottom: 5px;
+   }
+   .content p:not(:last-child), .content pre:not(:last-child), .content table:not(:last-child), .content ul:not(:last-child) {
+    margin-bottom: 0.1em;
+}
+  }
+
+@media(min-width: 768px)and (max-width: 1024px){
+  .content p:not(:last-child), .content pre:not(:last-child), .content table:not(:last-child), .content ul:not(:last-child) {
+    margin-bottom: 0.1em;
+  }
+  
+}
 </style>

@@ -62,6 +62,7 @@ export default {
        .then(response => response.json())
        .then(data => {
          this.newsList = data;
+         console.log(this.newsList);
        })
      }
   },
@@ -101,5 +102,23 @@ body{
   }
   button{
     padding-bottom: 20px;
+  }
+  @media(max-width: 767px){
+    .card-list {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 30px;
+    padding:50px;
+  }
+  }
+  @media(min-width: 768px)and (max-width: 1024px){
+    .card-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 30px;
+    
+  }
+
   }
 </style>
