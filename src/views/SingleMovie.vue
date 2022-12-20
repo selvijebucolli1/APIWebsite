@@ -6,7 +6,8 @@
         <img :src="'https://image.tmdb.org/t/p/original'+articleImage" :alt="articleImage">
       </div>
       <div class="column">
-        <div class="single-article__content content">
+        <article class="message is-dark">
+        <div class="single-article__content content message-body">
         <p class="title is-5">{{articleTitle}}</p>
         <div class="text"> {{articleContent }}</div>
     <div class="content">
@@ -14,6 +15,7 @@
       <time class="title is-6" datetime="2016-1-1">{{articleDate}}</time>
     </div>
       </div>
+    </article>
     </div>
     </div>
   </div>
