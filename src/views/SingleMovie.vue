@@ -2,7 +2,7 @@
   <article class="single-article">
     <div class="container">
       <div class="single-article__image">
-        <img :src="articleImage" :alt="articleImage">
+        <img :src="'https://image.tmdb.org/t/p/original'+articleImage" :alt="articleImage">
       </div>
       <div class="single-article__content content">
         <div> {{articleContent }}</div>
