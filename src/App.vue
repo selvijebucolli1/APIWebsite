@@ -8,7 +8,7 @@
 
 <style>
 
-img{
+.img{
   width: 200px;
   height: 70px;
 }

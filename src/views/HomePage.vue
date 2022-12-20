@@ -42,8 +42,9 @@ export default {
   data() {
     return {
       newsList: [],
-      rating:" ",
-      year:" "
+      year:" ",
+      rating:" "
+      
     }
   },
   methods : {
