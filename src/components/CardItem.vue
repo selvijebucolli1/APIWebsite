@@ -9,14 +9,13 @@
   <div class="card-content">
     <div class="media">
       <div class="media-content">
-        <p class="title is-4">{{cardTitle}}</p>
+        <p class="title is-5">{{cardTitle}}</p>
       </div>
     </div>
 
     <div class="content">
-      <p class="title is-6">Rating: {{cardRate}}</p>
-      <div v-html="cardContent"></div>
-      <time datetime="2016-1-1">{{cardDate}}</time>
+      <p class="title is-6"><img class="rateLogo" src="../assets/1828884.png"> {{cardRate}}</p>
+      <time class="title is-6" datetime="2016-1-1">{{cardDate}}</time>
     </div>
   </div>
 </router-link>
@@ -39,5 +38,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+.rateLogo{
+  width: 15px;
+  height: 15px;
+}
 </style>

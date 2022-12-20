@@ -1,12 +1,22 @@
 <template>
   <div id="app">
+    <div class="wrapper ">
+      <div class="columns">
+        <div class="columns">
+      <label class="has-text-grey-darker is-size-5" for="year">Year:</label>
+        <input class="input is-primary" id="year" type="text" v-model="year" placeholder="Movie Year..">
+      </div>
+      <div class="columns">
+        <label class="has-text-grey-darker is-size-5" for="rating">Rate:</label>
+        <input class="input is-primary" id="rating" type="text" v-model="rating" placeholder="Movie ..">
+      </div>
+      <div class="columns ">
+        <button class="button is-medium is-info is-rounded" @click="fetchYearRate()">Search</button>
+      </div>
+      </div>
+    </div>
     <div class="container">
-      <label for="year">Year</label>
-        <input id="year" type="text" v-model="year" placeholder="Movie Year..">
-        <label for="rating">Rate</label>
-        <input id="rating" type="text" v-model="rating" placeholder="Movie ..">
-        <button @click="fetchYearRate()">Search</button>
-      <div class="card-list">
+           <div class="card-list">
         <CardItem v-for="news in newsList.results" :key="news.id"
           :cardTitle="news.title"
           :cardContent="news.overview"
@@ -62,7 +72,7 @@ export default {
 
 <style>
 body{
-  background-color: rgb(78, 168, 204);
+  background-color: rgb(65, 145, 176);
 }
   .card-list {
     display: grid;
@@ -73,5 +83,22 @@ body{
   }
   img {
     object-fit:  cover !important;
+  }
+  .columns{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px 15px 10px 15px;
+    border-radius: 5px;
+    background-color: white;
+  }
+  .columns:last-child {
+    margin-bottom: -0.01rem;
+}
+  label{
+    margin-right: 10px;
+  }
+  button{
+    padding-bottom: 20px;
   }
 </style>

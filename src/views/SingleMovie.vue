@@ -4,8 +4,15 @@
       <div class="single-article__image">
         <img :src="'https://image.tmdb.org/t/p/original'+articleImage" :alt="articleImage">
       </div>
+      <div class="media-content">
+        <p class="title is-5">{{articleTitle}}</p>
+      </div>
       <div class="single-article__content content">
         <div> {{articleContent }}</div>
+    <div class="content">
+      <p class="title is-6"><img class="rateLogo" src="../assets/1828884.png"> {{articleRate}}</p>
+      <time class="title is-6" datetime="2016-1-1">{{articleDate}}</time>
+    </div>
       </div>
     </div>
   </article>
@@ -13,12 +20,16 @@
 </template>
 
 <script>
+
 export default {
   name: 'SingleMovie',
   data() {
     return {
+      articleTitle: '',
       articleContent: '',
-      articleImage: ''
+      articleImage: '',
+      articleRate: '',
+      articleDate: ''
     }
   },
   methods: {
@@ -27,8 +38,11 @@ export default {
       .then(response => response.json())
       .then(data => {
         console.log(data);
+        this.articleTitle = data.title,
         this.articleContent = data.overview;
         this.articleImage = data[0].poster_path;
+        this.articleRate = data.vote_average;
+        this.articleDate = data.release_date;
       })
     }
   },
@@ -43,5 +57,9 @@ export default {
   padding-top: 60px;
   padding-bottom: 60px;
   text-align: left;
+}
+.rateLogo{
+  width: 15px;
+  height: 15px;
 }
 </style>
