@@ -8,6 +8,7 @@
           :cardImage="news.poster_path"
           :cardDate="news.release_date"
           :cardSlug="news.id"
+          :cardRate="news.vote_average"
         >
         </CardItem>
       </div>
@@ -45,9 +46,12 @@ export default {
 </script>
 
 <style>
+body{
+  background-color: rgb(78, 168, 204);
+}
   .card-list {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 30px;
     padding-top: 60px;
     padding-bottom: 60px;

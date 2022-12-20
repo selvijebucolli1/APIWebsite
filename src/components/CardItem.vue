@@ -14,6 +14,7 @@
     </div>
 
     <div class="content">
+      <p class="title is-6">Rating: {{cardRate}}</p>
       <div v-html="cardContent"></div>
       <time datetime="2016-1-1">{{cardDate}}</time>
     </div>
@@ -30,7 +31,8 @@ export default {
     cardContent: String,
     cardImage: String,
     cardDate: String,
-    cardSlug: Number
+    cardSlug: Number,
+    cardRate: Number
   }
 }
 </script>
