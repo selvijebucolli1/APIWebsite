@@ -23,7 +23,7 @@ export default {
   },
   methods: {
     fetchSingleMovie(movieID) {
-      fetch('https://api.themoviedb.org/3//movie/'+ movieID +'?api_key=2c64846a6ec05dd248b9e8f65bba966b&language=en-US&page=1')
+      fetch('https://api.themoviedb.org/3//movie/'+ movieID+'?api_key=2c64846a6ec05dd248b9e8f65bba966b&language=en-US&page=1')
       .then(response => response.json())
       .then(data => {
         console.log(data);
