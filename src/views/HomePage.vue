@@ -2,12 +2,12 @@
   <div id="app">
     <div class="wrapper ">
       <div class="columns">
-        <div class="columns">
-      <label class="has-text-grey-darker is-size-5" for="year">Year:</label>
+        <div class="columns col1">
+      <label class="has-text-info is-size-5" for="year">Year:</label>
         <input class="input is-primary" id="year" type="text" v-model="year" placeholder="Movie Year..">
       </div>
-      <div class="columns">
-        <label class="has-text-grey-darker is-size-5" for="rating">Rate:</label>
+      <div class="columns col1">
+        <label class="has-text-info is-size-5" for="rating">Rate:</label>
         <input class="input is-primary" id="rating" type="text" v-model="rating" placeholder="Movie Ratings..">
       </div>
       <div class="columns ">
@@ -33,17 +33,17 @@
 
 <script>
 import CardItem from '../components/CardItem.vue';
-
 export default {
   name: 'HomePage',
   components: {
-    CardItem
+    CardItem,
   },
   data() {
     return {
       movieList: [],
+      genreList:[],
       year:'',
-      rating:''
+      rating:'',
       
     }
   },
@@ -54,6 +54,14 @@ export default {
       .then(data => {
         this.movieList = data;
         console.log(this.movieList);
+      })
+    },
+    fetchGenre() {
+      fetch('https://api.themoviedb.org/3/genre/movie/list?api_key=00d481b5200bd907e259829dcc6c3357')
+      .then(response => response.json())
+      .then(data => {
+        this.genreList = data;
+        console.log(this.genreList);
       })
     },
     fetchYearRate() {
@@ -68,13 +76,14 @@ export default {
   },
   mounted() {
     this.fetchMovie();
+
   }
 }
 </script>
 
 <style>
 body{
-  background-color: rgb(65, 145, 176);
+  background-color: rgb(253, 253, 253);
 }
   .card-list {
     display: grid;
@@ -110,6 +119,21 @@ body{
     gap: 30px;
     padding:50px;
   }
+  .columns{
+  
+    display: flex;
+    flex-wrap: wrap;
+    background-color: white;
+    flex-direction: column;
+    align-content: space-around;
+  }
+  .col1{
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: white;
+    flex-direction: row;
+    align-items: baseline;
+}
   }
   @media(min-width: 768px)and(max-width: 1024px){
     .card-list {

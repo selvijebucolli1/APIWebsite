@@ -31,7 +31,8 @@ export default {
     cardImage: String,
     cardDate: String,
     cardSlug: Number,
-    cardRate: Number
+    cardRate: Number,
+    
   }
 }
 </script>
@@ -42,4 +43,7 @@ export default {
   width: 15px;
   height: 15px;
 }
+.media-content{
+      padding-bottom: 30px;
+    }
 </style>
